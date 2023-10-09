@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\TeamCollection;
-use App\Http\Resources\TeamResource;
-use App\Models\Team;
+use App\Http\Resources\DriverCollection;
+use App\Http\Resources\DriverResource;
+use App\Models\Driver;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
-class TeamController extends Controller
+class DriverController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return new TeamCollection(Team::all());
+        return new DriverCollection(Driver::all());
     }
 
     /**
@@ -26,14 +26,16 @@ class TeamController extends Controller
         try {
             // Validate request JSON
             $data = $request->validate([
-                'name' => 'required|string|min:2',
-                'logo' => 'required|string',
-                'engine' => 'required|string',
+                'first_name' => 'required|string|min:2',
+                'last_name' => 'required|string|min:2',
+                'nationality' => 'required|string',
+                'age' => 'required|int',
+                'team_id' => 'required|int'
             ]);
             // Create team
-            $team = Team::create($data);
+            $team = Driver::create($data);
             // Return response
-            return response()->json(['message' => 'Team created successfully', 'data' => $team], 201);
+            return response()->json(['message' => 'Driver created successfully', 'data' => $team], 201);
         } catch(ValidationException $ex) {
             // Validation error
             return response()->json(['message' => 'Validation error', 'errors' => $ex->errors()], 400);
@@ -43,15 +45,15 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Team $team)
+    public function show(Driver $driver)
     {
-        return new TeamResource($team);
+        return new DriverResource($driver);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, Driver $driver)
     {
         //
     }
@@ -59,7 +61,7 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Team $team)
+    public function destroy(Driver $driver)
     {
         //
     }

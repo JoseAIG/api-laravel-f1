@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use DB;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,5 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // Teams
         $this->call(TeamSeeder::class);
+        // Drivers
+        $this->call(DriverSeeder::class);
     }
 }

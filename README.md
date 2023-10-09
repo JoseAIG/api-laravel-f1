@@ -26,3 +26,18 @@ URBE FSWD
         "engine": "string, required",
       }
       ```
+
+- ### Drivers
+  - GET /drivers
+  - GET /drivers/`<id>`
+  - POST /drivers
+    - Body (JSON):
+      ```json
+      {
+        "first_name": "string, required, min 2",
+        "last_name": "string, required, min 2",
+        "nationality": "string, required",
+        "age": "int, required",
+        "team_id": "int, required, team id"
+      }
+      ```
