@@ -41,3 +41,21 @@ URBE FSWD
         "team_id": "int, required, team id"
       }
       ```
+
+- ### Cars
+  - GET /cars
+    - Query parameters:
+      - team_id
+  - GET /cars/`<id>`
+  - POST /cars
+    - Body (JSON):
+      ```json
+      {
+        "model": "string, required",
+        "manufacturer": "string, required",
+        "year": "int, required",
+        "power": "int, required",
+        "engine": "string, required",
+        "team_id": "int, required"
+      }
+      ```
