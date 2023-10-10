@@ -29,6 +29,8 @@ URBE FSWD
 
 - ### Drivers
   - GET /drivers
+      - Query parameters:
+        - team_id
   - GET /drivers/`<id>`
   - POST /drivers
     - Body (JSON):

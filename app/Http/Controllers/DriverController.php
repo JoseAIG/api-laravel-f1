@@ -13,8 +13,14 @@ class DriverController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        // team_id query parameter
+        $team_id = $request->query('team_id');
+        if ($team_id) {
+            return new DriverCollection(Driver::where('team_id', $team_id)->get());
+        }
+        
         return new DriverCollection(Driver::all());
     }
 
