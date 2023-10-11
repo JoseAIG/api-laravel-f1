@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TrackController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('/teams', TeamController::class);
 Route::apiResource('/drivers', DriverController::class);
 Route::apiResource('/cars', CarController::class);
+Route::apiResource('/tracks', TrackController::class);

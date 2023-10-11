@@ -8,9 +8,9 @@ URBE FSWD
 
 - Teams (Equipos/Escuderias)
 - Drivers (Pilotos)
-- Circuits (Circuitos)
 - Cars (Monoplazas)
-- WC (World Champions/Campeones mundiales)
+- Tracks (Circuitos)
+- Championships (World Champions/Campeones mundiales)
 
 # Endpoints
 
@@ -59,5 +59,19 @@ URBE FSWD
         "power": "int, required",
         "engine": "string, required",
         "team_id": "int, required"
+      }
+      ```
+
+- ### Tracks
+  - GET /tracks
+  - GET /tracks/`<id>`
+  - POST /tracks
+    - Body (JSON):
+      ```json
+      {
+        "name": "string, required",
+        "location": "string, required",
+        "length": "numeric, required",
+        "fastest_lap": "string, required"
       }
       ```
