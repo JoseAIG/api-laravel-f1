@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CarSeeder::class);
         // Tracks
         $this->call(TrackSeeder::class);
+        // Championships
+        $this->call(ChampionshipSeeder::class);
     }
 }

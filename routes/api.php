@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ChampionshipController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TrackController;
@@ -26,3 +27,5 @@ Route::apiResource('/teams', TeamController::class);
 Route::apiResource('/drivers', DriverController::class);
 Route::apiResource('/cars', CarController::class);
 Route::apiResource('/tracks', TrackController::class);
+Route::get('/championships/{year}', [ChampionshipController::class, 'showByYear']);
+Route::apiResource('/championships', ChampionshipController::class);

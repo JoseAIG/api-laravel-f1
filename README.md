@@ -75,3 +75,17 @@ URBE FSWD
         "fastest_lap": "string, required"
       }
       ```
+
+- ### Championships
+  - GET /championships
+  - GET /championships/`<year>`
+  - POST /championships
+    - Body (JSON):
+      ```json
+      {
+        "year": "int, required",
+        "driver_name": "string, required",
+        "team_name": "string, required",
+        "points": "numeric, required"
+      }
+      ```
